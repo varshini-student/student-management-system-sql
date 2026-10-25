@@ -57,10 +57,14 @@ from Students S
 join Enrollments E on S.Student_id=E.Student_id
 group by S.Name;
 --  Top Scorer
-select S.Name,E.Marks
-from Students S
-join Enrollments E on S.Student_id=E.Student_id
-limit 1;
+
+SELECT S.Name, E.Marks
+FROM Students S
+JOIN Enrollments E
+  ON S.Student_id = E.Student_id
+ORDER BY E.Marks DESC
+LIMIT 1;
+
 -- Marks>80
 select S.Name,E.Marks
 from Students S
